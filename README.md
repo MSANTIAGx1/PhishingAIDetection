@@ -38,8 +38,22 @@ echo "CLAUDE_API_KEY=your_claude_api_key" >> .env
 
 ## Usage
 
+### Running the Script Directly
+
+The simplest way to use this tool is to run the script directly:
+
+```bash
+python phishing_ai_detection.py
+```
+
+This will start the interactive CLI that guides you through the URL analysis process.
+
+### Using as a Module
+
+You can also import and use the `URLAnalyzer` class in your own Python scripts:
+
 ```python
-from url_analyzer import URLAnalyzer
+from phishing_ai_detection import URLAnalyzer
 import os
 from dotenv import load_dotenv
 
@@ -62,12 +76,6 @@ result = analyzer.analyze_url(
 # Print analysis results
 if "result" in result and "analysis" in result["result"]:
     print(result["result"]["analysis"])
-```
-
-Or run the interactive CLI:
-
-```bash
-python url_analyzer.py
 ```
 
 ## Architecture
